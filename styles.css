@@ -53,24 +53,50 @@ body {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    transition: var(--transition);
+}
+
+.logo-icon:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
 }
 
 .logo-text {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 1.3rem;
+    font-weight: 900;
 }
 
 .logo-sub {
     color: var(--primary-color);
-    font-size: 0.9rem;
-    letter-spacing: 0.2rem;
-    font-weight: 600;
+    font-size: 0.65rem;
+    letter-spacing: 0.15rem;
+    font-weight: 700;
 }
 
 .nav-menu {
@@ -85,6 +111,7 @@ body {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    font-size: 1rem;
 }
 
 .nav-link:hover,
@@ -127,6 +154,7 @@ body {
     color: var(--white);
     position: relative;
     overflow: hidden;
+    padding: 2rem 0;
 }
 
 .hero-background {
@@ -152,13 +180,22 @@ body {
     text-align: center;
 }
 
+.hero-logo {
+    font-size: 5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    animation: slideInUp 0.8s ease;
+    text-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+}
+
 .hero-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 900;
     margin-bottom: 1rem;
     color: var(--primary-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     animation: slideInUp 0.8s ease;
+    line-height: 1.2;
 }
 
 @keyframes slideInUp {
@@ -173,7 +210,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--white);
     margin-bottom: 2rem;
     opacity: 0.9;
@@ -205,7 +242,7 @@ body {
 }
 
 .section-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 900;
     text-align: center;
     margin-bottom: 1rem;
@@ -245,6 +282,7 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: var(--transition);
+    font-size: 0.95rem;
 }
 
 .filter-btn:hover,
@@ -256,7 +294,7 @@ body {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -276,7 +314,7 @@ body {
 .portfolio-image {
     position: relative;
     overflow: hidden;
-    height: 300px;
+    height: 250px;
 }
 
 .portfolio-image img {
@@ -313,14 +351,14 @@ body {
 }
 
 .portfolio-overlay h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .portfolio-overlay p {
     color: var(--white);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* ===== CLIENTS SECTION ===== */
@@ -331,7 +369,7 @@ body {
 
 .clients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
 }
 
@@ -350,7 +388,7 @@ body {
 }
 
 .client-logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
@@ -358,7 +396,7 @@ body {
 
 .client-description {
     color: var(--white);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     opacity: 0.8;
 }
 
@@ -368,33 +406,97 @@ body {
     background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+.about-wrapper {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.about-text p {
-    color: var(--text-light);
+.about-logo-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
-    line-height: 1.8;
+    display: inline-block;
+    text-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.about-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 1.5rem auto 2rem;
+    border-radius: 2px;
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-text {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.9;
     font-size: 1.05rem;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.value-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.value-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.value-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
 }
 
 .about-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
 
 .stat {
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--secondary-color);
     border-radius: 10px;
     color: var(--white);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.stat:hover {
+    transform: translateY(-5px);
 }
 
 .stat h3 {
@@ -406,6 +508,7 @@ body {
 .stat p {
     color: var(--white);
     margin-bottom: 0;
+    font-size: 0.95rem;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -434,7 +537,7 @@ body {
 .contact-info {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .info-card {
@@ -481,6 +584,7 @@ body {
     color: var(--white);
     font-family: inherit;
     transition: var(--transition);
+    font-size: 1rem;
 }
 
 .contact-form input::placeholder,
@@ -522,7 +626,7 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -535,6 +639,7 @@ body {
 .footer-section p {
     opacity: 0.8;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .footer-section ul {
@@ -582,9 +687,32 @@ body {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 215, 0, 0.2);
     opacity: 0.6;
+    font-size: 0.9rem;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-logo {
+        font-size: 4rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -594,12 +722,28 @@ body {
         display: none;
     }
 
+    .logo-text-group {
+        gap: 0;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .logo-sub {
+        font-size: 0.55rem;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-logo {
+        font-size: 3rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .section-title {
@@ -611,46 +755,209 @@ body {
     }
 
     .clients-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 
-    .about-content {
+    .about-wrapper {
+        padding: 0 1rem;
+    }
+
+    .about-values {
         grid-template-columns: 1fr;
     }
 
     .about-stats {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .stat {
+        padding: 1.5rem;
+    }
+
+    .stat h3 {
+        font-size: 2rem;
     }
 
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .portfolio-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .logo-sub {
+        font-size: 0.5rem;
+        letter-spacing: 0.1rem;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .hero-logo {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
     .hero-subtitle {
         font-size: 1rem;
     }
 
-    .section-title {
-        font-size: 1.5rem;
+    .cta-button {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.95rem;
     }
 
-    .cta-button {
-        padding: 0.8rem 2rem;
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .section-subtitle {
         font-size: 1rem;
+    }
+
+    .portfolio-grid {
+        gap: 1.5rem;
+    }
+
+    .portfolio-image {
+        height: 200px;
+    }
+
+    .portfolio-overlay h3 {
+        font-size: 1.1rem;
+    }
+
+    .portfolio-overlay p {
+        font-size: 0.85rem;
+    }
+
+    .clients-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .client-card {
+        padding: 1.5rem;
+    }
+
+    .client-logo {
+        font-size: 1.1rem;
+    }
+
+    .about-logo-icon {
+        font-size: 3rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .stat {
+        padding: 1.2rem;
+    }
+
+    .stat h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat p {
+        font-size: 0.85rem;
+    }
+
+    .value-card {
+        padding: 1.5rem;
+    }
+
+    .value-card i {
+        font-size: 2rem;
+    }
+
+    .value-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-section h4 {
+        font-size: 1.1rem;
     }
 
     .nav-menu {
         gap: 1rem;
+    }
+
+    .portfolio-filters {
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        gap: 0.5rem;
+    }
+
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-logo {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
     }
 
     .about-stats {
