@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YRP CREATION - Graphics Design Portfolio</title>
+    <title>YRP CREATION - Professional Graphics Design Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,8 +12,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Ctext x='5' y='50' font-size='45' font-weight='900' fill='%23FFA500' font-family='Arial'%3EYRP%3C/text%3E%3Ccircle cx='75' cy='25' r='12' fill='%230D1B2A' stroke='white' stroke-width='2'/%3E%3Ccircle cx='85' cy='18' r='8' fill='%230D1B2A' stroke='white' stroke-width='1.5'/%3E%3Cpolygon points='78,28 80,32 76,32' fill='white'/%3E%3Cpath d='M85,25 L88,25 L86.5,27 Z' fill='white'/%3E%3C/svg%3E" alt="YRP CREATION Logo">
+                <div class="logo-badge">
+                    <span class="logo-letter">Y</span>
+                    <span class="logo-letter">R</span>
+                    <span class="logo-letter">P</span>
                 </div>
                 <div class="logo-text-group">
                     <span class="logo-text">YRP</span>
@@ -38,100 +40,137 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-logo">
-                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60' width='120' height='72'>
-                    <text x='5' y='50' font-size='45' font-weight='900' fill='%23FFA500' font-family='Arial'>YRP</text>
-                    <circle cx='75' cy='25' r='12' fill='%230D1B2A' stroke='white' stroke-width='2'/>
-                    <circle cx='85' cy='18' r='8' fill='%230D1B2A' stroke='white' stroke-width='1.5'/>
-                    <polygon points='78,28 80,32 76,32' fill='white'/>
-                    <path d='M85,25 L88,25 L86.5,27 Z' fill='white'/>
-                </svg>
+            <div class="hero-logo-display">
+                <div class="hero-badge">
+                    <span class="badge-letter">Y</span>
+                    <span class="badge-letter">R</span>
+                    <span class="badge-letter">P</span>
+                </div>
             </div>
-            <h1 class="hero-title">Welcome to YRP CREATION</h1>
-            <p class="hero-subtitle">Professional Graphics Design & Creative Solutions</p>
-            <button class="cta-button" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">View My Work</button>
+            <h1 class="hero-title">YRP CREATION</h1>
+            <p class="hero-subtitle">Professional Graphics Design & Creative Visual Solutions</p>
+            <p class="hero-description">Crafting stunning thumbnail designs, branding, and visual content for creators and businesses worldwide</p>
+            <button class="cta-button" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">Explore Portfolio</button>
         </div>
         <div class="hero-background"></div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Carousel Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">Portfolio Gallery</h2>
-            <p class="section-subtitle">Showcase of Thumbnail Designs & Creative Work</p>
+            <h2 class="section-title">My Works Gallery</h2>
+            <p class="section-subtitle">HD Quality Portfolio - Swipe or Click to Navigate</p>
             
-            <div class="portfolio-filters">
-                <button class="filter-btn active" onclick="filterPortfolio('all')">All</button>
-                <button class="filter-btn" onclick="filterPortfolio('thumbnail')">Thumbnails</button>
-                <button class="filter-btn" onclick="filterPortfolio('branding')">Branding</button>
-                <button class="filter-btn" onclick="filterPortfolio('social')">Social Media</button>
-            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Carousel Item 1 -->
+                        <div class="carousel-item active" data-category="thumbnail">
+                            <div class="carousel-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&h=600&fit=crop&q=80" alt="YouTube Thumbnail Design" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="overlay-content">
+                                        <h3>YouTube Thumbnail Design</h3>
+                                        <p>Eye-catching thumbnail for video content</p>
+                                        <span class="category-badge">Thumbnail</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="portfolio-grid">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item" data-category="thumbnail">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="YouTube Thumbnail Design">
-                        <div class="portfolio-overlay">
-                            <h3>YouTube Thumbnail Design</h3>
-                            <p>Eye-catching thumbnail for video content</p>
+                        <!-- Carousel Item 2 -->
+                        <div class="carousel-item" data-category="branding">
+                            <div class="carousel-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&h=600&fit=crop&q=80" alt="Brand Logo Design" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Brand Logo Design</h3>
+                                        <p>Modern logo for tech startup</p>
+                                        <span class="category-badge">Branding</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Item 3 -->
+                        <div class="carousel-item" data-category="social">
+                            <div class="carousel-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&h=600&fit=crop&q=80" alt="Social Media Campaign" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Social Media Campaign</h3>
+                                        <p>Instagram & Facebook content design</p>
+                                        <span class="category-badge">Social Media</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Item 4 -->
+                        <div class="carousel-item" data-category="thumbnail">
+                            <div class="carousel-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&h=600&fit=crop&q=80" alt="Podcast Cover Art" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Podcast Cover Art</h3>
+                                        <p>Professional podcast artwork design</p>
+                                        <span class="category-badge">Thumbnail</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Item 5 -->
+                        <div class="carousel-item" data-category="branding">
+                            <div class="carousel-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&h=600&fit=crop&q=80" alt="Business Card Design" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Business Card Design</h3>
+                                        <p>Professional business card mockup</p>
+                                        <span class="category-badge">Branding</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Item 6 -->
+                        <div class="carousel-item" data-category="social">
+                            <div class="carousel-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&h=600&fit=crop&q=80" alt="Website Banner Design" class="carousel-image">
+                                <div class="carousel-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Website Banner Design</h3>
+                                        <p>Engaging web banner for e-commerce</p>
+                                        <span class="category-badge">Social Media</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
 
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Brand Logo Design">
-                        <div class="portfolio-overlay">
-                            <h3>Brand Logo Design</h3>
-                            <p>Modern logo for tech startup</p>
-                        </div>
-                    </div>
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button class="indicator active" onclick="goToSlide(0)"></button>
+                    <button class="indicator" onclick="goToSlide(1)"></button>
+                    <button class="indicator" onclick="goToSlide(2)"></button>
+                    <button class="indicator" onclick="goToSlide(3)"></button>
+                    <button class="indicator" onclick="goToSlide(4)"></button>
+                    <button class="indicator" onclick="goToSlide(5)"></button>
                 </div>
 
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item" data-category="social">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Social Media Post">
-                        <div class="portfolio-overlay">
-                            <h3>Social Media Campaign</h3>
-                            <p>Instagram & Facebook content design</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-item" data-category="thumbnail">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Podcast Cover Art">
-                        <div class="portfolio-overlay">
-                            <h3>Podcast Cover Art</h3>
-                            <p>Professional podcast artwork design</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Business Card Design">
-                        <div class="portfolio-overlay">
-                            <h3>Business Card Design</h3>
-                            <p>Professional business card mockup</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-item" data-category="social">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Banner Design">
-                        <div class="portfolio-overlay">
-                            <h3>Website Banner Design</h3>
-                            <p>Engaging web banner for e-commerce</p>
-                        </div>
-                    </div>
+                <!-- Carousel Counter -->
+                <div class="carousel-counter">
+                    <span class="current-slide">1</span> / <span class="total-slides">6</span>
                 </div>
             </div>
         </div>
@@ -140,8 +179,8 @@
     <!-- Clients Section -->
     <section id="clients" class="clients">
         <div class="container">
-            <h2 class="section-title">Previously Worked Clients</h2>
-            <p class="section-subtitle">Trusted by leading brands and companies</p>
+            <h2 class="section-title">Trusted by Leading Brands</h2>
+            <p class="section-subtitle">Previously Worked Clients & Collaborations</p>
             
             <div class="clients-grid">
                 <div class="client-card">
@@ -176,14 +215,12 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-wrapper">
-                <div class="about-logo-icon">
-                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60' width='100' height='60'>
-                        <text x='5' y='50' font-size='45' font-weight='900' fill='%23FFA500' font-family='Arial'>YRP</text>
-                        <circle cx='75' cy='25' r='12' fill='%230D1B2A' stroke='white' stroke-width='2'/>
-                        <circle cx='85' cy='18' r='8' fill='%230D1B2A' stroke='white' stroke-width='1.5'/>
-                        <polygon points='78,28 80,32 76,32' fill='white'/>
-                        <path d='M85,25 L88,25 L86.5,27 Z' fill='white'/>
-                    </svg>
+                <div class="about-logo-section">
+                    <div class="about-badge">
+                        <span class="badge-letter">Y</span>
+                        <span class="badge-letter">R</span>
+                        <span class="badge-letter">P</span>
+                    </div>
                 </div>
                 <h2 class="section-title">About YRP CREATION</h2>
                 <div class="about-divider"></div>
@@ -199,18 +236,18 @@
                     <div class="about-values">
                         <div class="value-card">
                             <i class="fas fa-lightbulb"></i>
-                            <h4>Creative</h4>
+                            <h4>Creative Excellence</h4>
                             <p>Innovative solutions for unique challenges</p>
                         </div>
                         <div class="value-card">
                             <i class="fas fa-star"></i>
-                            <h4>Quality</h4>
+                            <h4>Quality First</h4>
                             <p>Premium designs that stand out</p>
                         </div>
                         <div class="value-card">
                             <i class="fas fa-handshake"></i>
-                            <h4>Professional</h4>
-                            <p>Reliable and dedicated service</p>
+                            <h4>Professional Service</h4>
+                            <p>Reliable and dedicated support</p>
                         </div>
                     </div>
 
@@ -237,7 +274,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's create something amazing together</p>
+            <p class="section-subtitle">Let's Create Something Amazing Together</p>
             
             <div class="contact-content">
                 <div class="contact-info">

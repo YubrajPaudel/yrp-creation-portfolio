@@ -3,10 +3,12 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+}
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -35,37 +37,87 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== PORTFOLIO FILTER =====
-function filterPortfolio(category) {
-    const items = document.querySelectorAll('.portfolio-item');
-    const buttons = document.querySelectorAll('.filter-btn');
+// ===== CAROUSEL FUNCTIONALITY =====
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const totalSlides = slides.length;
+const track = document.querySelector('.carousel-track');
+const indicators = document.querySelectorAll('.indicator');
+const currentSlideSpan = document.querySelector('.current-slide');
+const totalSlidesSpan = document.querySelector('.total-slides');
 
-    // Update active button
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+// Auto-advance carousel every 5 seconds
+let autoAdvanceInterval = setInterval(() => {
+    moveCarousel(1);
+}, 5000);
 
-    // Filter items
-    items.forEach(item => {
-        if (category === 'all') {
-            item.style.display = 'block';
-            setTimeout(() => {
-                item.style.opacity = '1';
-            }, 10);
-        } else {
-            if (item.getAttribute('data-category') === category) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                }, 10);
-            } else {
-                item.style.opacity = '0';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
-        }
-    });
+// Reset auto-advance on manual navigation
+function resetAutoAdvance() {
+    clearInterval(autoAdvanceInterval);
+    autoAdvanceInterval = setInterval(() => {
+        moveCarousel(1);
+    }, 5000);
 }
+
+function updateCarousel() {
+    // Update track position
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update active slide
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[currentSlide].classList.add('active');
+    
+    // Update indicators
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    indicators[currentSlide].classList.add('active');
+    
+    // Update counter
+    currentSlideSpan.textContent = currentSlide + 1;
+}
+
+function moveCarousel(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    updateCarousel();
+    resetAutoAdvance();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+    resetAutoAdvance();
+}
+
+// Touch/Swipe support for carousel
+let touchStartX = 0;
+let touchEndX = 0;
+const carouselContainer = document.querySelector('.carousel-container');
+
+carouselContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+carouselContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+        moveCarousel(1); // Swipe left
+    }
+    if (touchEndX > touchStartX + 50) {
+        moveCarousel(-1); // Swipe right
+    }
+}
+
+// Pause auto-advance on hover
+carouselContainer.addEventListener('mouseenter', () => {
+    clearInterval(autoAdvanceInterval);
+});
+
+carouselContainer.addEventListener('mouseleave', () => {
+    resetAutoAdvance();
+});
 
 // ===== SMOOTH SCROLL FOR BUTTONS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -106,14 +158,11 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.portfolio-item, .client-card').forEach(el => {
+document.querySelectorAll('.client-card, .value-card, .stat').forEach(el => {
     observer.observe(el);
 });
 
-// ===== ADD TO PORTFOLIO ITEMS =====
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-portfolioItems.forEach((item, index) => {
-    item.style.opacity = '1';
-});
+// Initialize carousel
+updateCarousel();
 
 console.log('YRP CREATION Portfolio Website Loaded Successfully!');
