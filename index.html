@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YRP CREATION - Graphics Design Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">YRP</span>
+                <span class="logo-sub">CREATION</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#clients" class="nav-link">Clients</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to YRP CREATION</h1>
+            <p class="hero-subtitle">Professional Graphics Design & Creative Solutions</p>
+            <button class="cta-button" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">View My Work</button>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio Gallery</h2>
+            <p class="section-subtitle">Showcase of Thumbnail Designs & Creative Work</p>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" onclick="filterPortfolio('all')">All</button>
+                <button class="filter-btn" onclick="filterPortfolio('thumbnail')">Thumbnails</button>
+                <button class="filter-btn" onclick="filterPortfolio('branding')">Branding</button>
+                <button class="filter-btn" onclick="filterPortfolio('social')">Social Media</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-category="thumbnail">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="YouTube Thumbnail Design">
+                        <div class="portfolio-overlay">
+                            <h3>YouTube Thumbnail Design</h3>
+                            <p>Eye-catching thumbnail for video content</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Brand Logo Design">
+                        <div class="portfolio-overlay">
+                            <h3>Brand Logo Design</h3>
+                            <p>Modern logo for tech startup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-category="social">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Social Media Post">
+                        <div class="portfolio-overlay">
+                            <h3>Social Media Campaign</h3>
+                            <p>Instagram & Facebook content design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-category="thumbnail">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Podcast Cover Art">
+                        <div class="portfolio-overlay">
+                            <h3>Podcast Cover Art</h3>
+                            <p>Professional podcast artwork design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item" data-category="branding">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Business Card Design">
+                        <div class="portfolio-overlay">
+                            <h3>Business Card Design</h3>
+                            <p>Professional business card mockup</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item" data-category="social">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Banner Design">
+                        <div class="portfolio-overlay">
+                            <h3>Website Banner Design</h3>
+                            <p>Engaging web banner for e-commerce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <h2 class="section-title">Previously Worked Clients</h2>
+            <p class="section-subtitle">Trusted by leading brands and companies</p>
+            
+            <div class="clients-grid">
+                <div class="client-card">
+                    <div class="client-logo">TechFlow Inc.</div>
+                    <p class="client-description">Software Development Company</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">Creative Hub</div>
+                    <p class="client-description">Digital Marketing Agency</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">StartUp Labs</div>
+                    <p class="client-description">Innovation & Entrepreneurship</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">Digital Dreams</div>
+                    <p class="client-description">Content Creation Studio</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">Brand Masters</div>
+                    <p class="client-description">Branding & Design Studio</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-logo">Social Wave</div>
+                    <p class="client-description">Social Media Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About YRP CREATION</h2>
+                    <p>YRP CREATION is a professional graphics design studio specializing in creating stunning visual content for businesses and creators. With years of experience in the design industry, we deliver high-quality thumbnail designs, branding solutions, and creative assets tailored to your unique needs.</p>
+                    <p>Our mission is to transform your ideas into visually compelling designs that capture attention and drive engagement. We work closely with clients to understand their vision and deliver designs that exceed expectations.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>30+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's create something amazing together</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>contact@yrpcreation.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>Your City, Country</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>YRP CREATION</h4>
+                    <p>Professional graphics design studio creating stunning visual content.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 YRP CREATION. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
